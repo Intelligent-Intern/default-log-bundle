@@ -23,36 +23,29 @@ secret/data/data/config:
 
 Once the bundle is installed and configured, the Core framework will dynamically detect the Default logging service via the `log.strategy` tag.
 
-The service will be available via the `LogServiceFactory`:
+The service will be available via the `LoggerInterface`, which will be injected automatically. Here's an example with a `/logtest` route:
 
 ~~~php
 <?php
 
 namespace App\Controller;
 
-use App\Factory\LogServiceFactory;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class LoggingController extends AbstractController
 {
     public function __construct(
-        private LogServiceFactory $logServiceFactory
+        private LoggerInterface $logger
     ) {}
 
-    public function logMessage(Request $request): JsonResponse
+    #[Route('/logtest', name: 'log_test', methods: ['GET'])]
+    public function logTest(): JsonResponse
     {
-        $message = $request->get('message', '');
-        $level = $request->get('level', 'info');
-
-        if (empty($message)) {
-            return new JsonResponse(['error' => 'Message cannot be empty'], 400);
-        }
-
         try {
-            $logger = $this->logServiceFactory->create();
-            $logger->log($level, $message);
+            $this->logger->info('Test log message from /logtest route.');
 
             return new JsonResponse(['message' => 'Log written successfully']);
         } catch (\Exception $e) {
