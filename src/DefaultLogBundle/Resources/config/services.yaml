@@ -1,1 +1,3 @@
-# Configuration for DefaultLogBundle
+services:
+  IntelligentIntern\DefaultLogBundle\Service\DefaultLogService:
+    tags: ['log.strategy']

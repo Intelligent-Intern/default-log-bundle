@@ -1,6 +1,6 @@
 <?php
 
-namespace DefaultLogBundle;
+namespace IntelligentIntern\DefaultLogBundle;
 
 use DefaultLogBundle\DependencyInjection\Compiler\LogServiceCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
