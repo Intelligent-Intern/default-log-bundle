@@ -28,11 +28,6 @@ class DefaultLogService implements LogServiceInterface
         $this->logger->log(Level::fromName(strtoupper($level)), $message, $context);
     }
 
-    public function setVaultService(VaultService $vaultService): void
-    {
-        // No operation needed as VaultService is not used in this implementation
-    }
-
     public function emergency(string $message, array $context = []): void
     {
         $this->logger->emergency($message, $context);
