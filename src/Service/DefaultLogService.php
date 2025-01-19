@@ -1,6 +1,6 @@
 <?php
 
-namespace IntelligentIntern\DefaultLogBundle\Service;
+namespace IntelligentIntern\Service;
 
 use App\Interface\LogServiceInterface;
 use App\Service\VaultService;
