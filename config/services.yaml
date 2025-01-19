@@ -1,4 +1,11 @@
 services:
-  IntelligentIntern\DefaultLogBundle\Service\DefaultLogService:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  IntelligentIntern\DefaultLogBundle\Service\:
+    resource: '../src/Service/*'
+    public: true
     tags:
       - { name: 'log.strategy' }
