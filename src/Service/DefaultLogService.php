@@ -2,8 +2,8 @@
 
 namespace IntelligentIntern\DefaultLogBundle\Service;
 
-use App\Interface\LogServiceInterface;
 use App\Service\VaultService;
+use App\Contractg\LogServiceInterface;
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Monolog\Logger;
