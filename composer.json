@@ -1,7 +1,7 @@
 {
   "name": "intelligent-intern/default-log-bundle",
   "description": "Symfony bundle for default logging integration",
-  "type": "symfony-bundle",
+  "type": "intelligent-intern-bundle",
   "license": "MIT",
   "autoload": {
     "psr-4": {
