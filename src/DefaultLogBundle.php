@@ -2,7 +2,7 @@
 
 namespace IntelligentIntern\DefaultLogBundle;
 
-use App\DependencyInjection\Compiler\LogStrategyCompilerPass;
+use App\DependencyInjection\Logging\LogStrategyCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;

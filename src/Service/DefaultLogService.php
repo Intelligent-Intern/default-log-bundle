@@ -4,6 +4,7 @@ namespace IntelligentIntern\DefaultLogBundle\Service;
 
 use App\Service\VaultService;
 use App\Contract\LogServiceInterface;
+use GuzzleHttp\Client;
 use Monolog\Handler\StreamHandler;
 use Monolog\Level;
 use Monolog\Logger;
@@ -22,6 +23,8 @@ class DefaultLogService implements LogServiceInterface
     {
         return strtolower($provider) === 'default';
     }
+
+    public function reset(): void {}
 
     public function log(string $level, string $message, array $context = []): void
     {
